@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const AddJobPage = ({ addJobSubmit }) => {
 
@@ -34,11 +35,13 @@ const submitForm = (e) => {
 
     addJobSubmit(newJob);
 
+    toast.success("Job added successfully");
+
     return navigate("/jobs");
 }
 
     return (
-        <section Name="bg-indigo-50">
+        <section className="bg-indigo-50">
             <div className="container m-auto max-w-2xl py-24">
                 <div
                     className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
@@ -93,7 +96,7 @@ const submitForm = (e) => {
                         </div>
 
                         <div className="mb-4">
-                            <label htmlFor="type" class="block text-gray-700 font-bold mb-2"
+                            <label htmlFor="type" className="block text-gray-700 font-bold mb-2"
                             >Salary</label>
                             <select
                                 id="salary"
@@ -117,7 +120,7 @@ const submitForm = (e) => {
                             </select>
                         </div>
 
-                        <div class='mb-4'>
+                        <div className='mb-4'>
                             <label className='block text-gray-700 font-bold mb-2'>
                                 Location
                             </label>
@@ -136,7 +139,7 @@ const submitForm = (e) => {
                         <h3 className="text-2xl mb-5">Company Info</h3>
 
                         <div className="mb-4">
-                            <label htmlFor="company" class="block text-gray-700 font-bold mb-2"
+                            <label htmlFor="company" className="block text-gray-700 font-bold mb-2"
                             >Company Name</label>
                             <input
                                 type="text"
